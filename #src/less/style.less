@@ -1,0 +1,141 @@
+// Fonts
+@import "fonts.less";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+// Reboot styles
+@import "reboot.less";
+
+// Animation
+@import "animate.less";
+
+// Variables and common styles
+@fontFamily: 'Montserrat', 'Roboto', sans-serif;
+
+
+.main_body {
+  font-family: @fontFamily;
+  font-weight: 300;
+  font-size: 18px;
+  color: rgb(24, 23, 23);
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1730px;
+  margin: 0px auto;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+
+  .loader {
+    height: 40px;
+    width: 40px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    border-top-color: rgb(248, 117, 126);
+    border-right-color: rgb(248, 117, 126);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+  }
+}
+
+.scroll-top {
+  display: block;
+  position: fixed;
+  right: 30px;
+  bottom: -45px;
+  z-index: 100;
+  width: 42px;
+  height: 42px;
+  font-size: 14px;
+  line-height: 40px;
+  color: #ffffff;
+  background: #f8757e;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  transition: .45s all ease-in-out;
+  border-radius: 50%;
+}
+
+.scroll-topUp {
+  bottom: 45px;
+
+}
+
+.done {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .5);
+
+  &__dialog {
+    max-width: 500px;
+    margin: 20% auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(24, 23, 23, 0.493);
+  }
+
+  &__content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: linear-gradient(135deg, #fba964 0, #f8757e 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 700;
+
+    @media screen and (max-width: 700px) {
+      .modal__content {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
